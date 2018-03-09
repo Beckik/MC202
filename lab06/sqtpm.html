@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>sqtpm</title>
+<link type="image/png" rel="icon" href="http://ion.ic.unicamp.br/sqtpm/icon.png">
+<link rel="stylesheet" type="text/css" href="./sqtpm_files/sqtpm.css" media="all">
+
+<style></style></head>
+<body>
+<div id="wrapper"><div id="sidebar"><h1>sqtpm</h1><p style="margin-top:-15px"><small>[206456]</small></p><a href="javascript:;" onclick="window.history.go(-1); return false;">voltar</a></div><div id="content"><form method="post" action="http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi" enctype="multipart/form-data" name="sqtpm"><script type="text/javascript" src="./sqtpm_files/sqtpm.js"></script><input type="hidden" name="action"><input type="hidden" name="arg1"><input type="hidden" name="arg2"><input type="hidden" name="arg3"><b>Trabalho:</b> 06-arvore-de-busca<table><tbody><tr><td style="vertical-align:top">Linguagens: C<br>Data de abertura: 2017/09/18 14:00:00<br>Data limite para envio: 2017/09/25 12:00:00 (encerrado)<br>Número máximo de envios: 25<br>Casos-de-teste abertos: <a href="javascript:;" onclick="wrap(&#39;dwn&#39;,&#39;06-arvore-de-busca&#39;,&#39;&#39;,&#39;casos-de-teste.tgz&#39;)" ;="">casos-de-teste.tgz</a><br></td></tr></tbody></table><hr><h1>Árvore binária de busca</h1>
+
+Este trabalho consiste em escrever um programa com funções para
+manipular uma árvore de busca binária para inteiros de acordo com as
+instruções a seguir.
+
+Inicialmente o programa deve criar uma árvore vazia e em seguida deve
+processar a entrada-padrão.  A entrada contém comandos que podem ser
+da seguinte forma:
+
+<ul>
+<li>
+inserir x
+
+<p>
+Ao ler o comando inserir x, onde x é um inteiro, o programa deve
+inserir a chave x na árvore de busca binária.  A árvore não deve ter
+elementos repetidos, então se x já pertence à árvore ele não deve ser
+inserido de novo.  Se não houver memória para essa operação, o
+programa deve imprimir "memoria insuficiente" em uma linha e deve
+continuar a execução.
+
+</p></li><li>
+excluir x
+
+<p>
+Ao ler o comando excluir x, onde x é um inteiro, o programa deve
+remover a chave x da árvore binária de busca.  Se x não estiver na
+árvore o programa não deve fazer nada.  O programa deve usar o
+sucessor de um nó para a substituição de um nó que tenha dois filhos.
+
+</p></li><li>
+buscar x
+
+<p>
+Ao ler o comando buscar x, onde x é um inteiro, o programa deve buscar
+a chave na árvore e imprimir "pertence" ou "nao pertence" em uma
+linha.
+
+<!--
+<li>
+intervalo x y
+
+<p>
+Ao ler a instrução intervalo x y, onde x e y são inteiros, o programa
+deve imprimir todas as chaves no intervalo, em ordem crescente,
+separadas por espaço em uma linha.  Se não houver chaves no intervalo
+o programa deve imprimir "nenhuma" em uma linha.
+-->
+
+</p></li><li>
+minimo <br> 
+maximo
+
+<p>
+Ao ler desses comandos o programa deve imprimir a menor chave ou a
+maior chave na árvore.  Se a árvore estiver vazia então o programa
+deve imprimir "vazia" em uma linha.
+
+</p></li><li>
+pos-ordem<br>
+em-ordem<br>
+pre-ordem<br>
+largura
+
+<p>
+Ao ler um desses comandos o programa deve imprimir as chaves na ordem
+em que forem visitadas por um percurso em profundidade em pós-ordem,
+em-ordem, em pré-ordem ou por um percurso em largura.  As chaves devem
+ser impressas seguidas por um espaço, em uma única linha.  Se a árvore
+estiver vazia então o programa deve imprimir "vazia" em uma linha.
+
+</p></li><li>
+terminar
+
+<p>
+Ao ler esse comando o programa deve desalocar a árvore e todos os nós
+dela e terminar.
+</p></li></ul>
+
+
+<h3>Exemplo</h3>
+<p>
+Entrada:
+
+</p><pre>inserir 50
+inserir 30
+inserir 40
+inserir 10
+inserir 20
+pre-ordem
+excluir 50
+pre-ordem
+terminar
+</pre>
+
+<p>
+Saída:
+
+</p><pre>50 30 10 20 40 
+30 10 20 40 
+</pre>
+
+<h3>Observações</h3>
+<ul>
+<li>
+Cada operação deve ser implementada por uma função.
+</li></ul>
+<hr></form></div>
+
+</div></body></html>

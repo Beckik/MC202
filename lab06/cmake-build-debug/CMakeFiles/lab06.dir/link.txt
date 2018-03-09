@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/lab06.dir/main.c.o CMakeFiles/lab06.dir/node.c.o  -o lab06 
