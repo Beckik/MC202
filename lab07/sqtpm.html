@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>sqtpm</title>
+<link type="image/png" rel="icon" href="http://ion.ic.unicamp.br/sqtpm/icon.png">
+<link rel="stylesheet" type="text/css" href="./sqtpm_files/sqtpm.css" media="all">
+
+<style></style></head>
+<body>
+<div id="wrapper"><div id="sidebar"><h1>sqtpm</h1><p style="margin-top:-15px"><small>[206456]</small></p><a href="javascript:;" onclick="window.history.go(-1); return false;">voltar</a></div><div id="content"><form method="post" action="http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi" enctype="multipart/form-data" name="sqtpm"><script type="text/javascript" src="./sqtpm_files/sqtpm.js"></script><input type="hidden" name="action"><input type="hidden" name="arg1"><input type="hidden" name="arg2"><input type="hidden" name="arg3"><b>Trabalho:</b> 07-lca<table><tbody><tr><td style="vertical-align:top">Linguagens: C<br>Data de abertura: 2017/09/25 14:00:00<br>Data limite para envio: 2017/10/02 12:00:00 (encerrado)<br>Número máximo de envios: 25<br>Casos-de-teste abertos: <a href="javascript:;" onclick="wrap(&#39;dwn&#39;,&#39;07-lca&#39;,&#39;&#39;,&#39;casos-de-teste.tgz&#39;)" ;="">casos-de-teste.tgz</a><br></td></tr></tbody></table><hr><h1>Ancestral Comum mais Baixo</h1>
+
+<p>
+O ancestral comum mais baixo (lca em inglês) de dois vétices A e B em
+uma árvore T é o nó com maior profundidade que possui os nós A e B
+como descendentes.  Um nó A é descendente dele mesmo, então, caso A
+seja filho de B em T, B é o LCA de A e B.
+
+</p><p>Na árvore abaixo, o lca de 4 e 2 é 7 e o lca de 8 e 2 é 1.
+
+</p><pre>	    1
+	   / \
+	  5   \
+	 /     \ 
+	7       3
+       / \     /|\
+      4   2   / | \
+             8  9  6
+</pre>
+
+
+<p>
+Neste trabalho seu programa deve manter uma floresta.  Inicialmente a
+floresta tem N árvores enraizadas com exatamente um nó cada, rotulados
+de 1 a N.
+		
+</p><p>
+As seguintes operações podem ser realizadas
+
+</p><ul>
+  <li> link A B: adiciona uma aresta do nó B para o nó A, fazendo com
+    que A seja filho de B na árvore que tem B. A é um nó raiz e A e B
+    estão em árvores diferentes.
+  </li><li>cut A: remove a aresta que liga o pai de A com A. A não é raiz
+    de alguma árvore.
+  </li><li>lca A B: imprime o ancestral comum mais baixo de A e B. A e B
+    estão na mesma árvore.
+</li></ul>
+
+<h2>Especificação de entrada e saída</h2>
+<h3>Entrada</h3>
+	
+A primeira linha da entrada contém dois inteiros, N e M.  N é o número
+de árvores na floresta inicial.  Em seguida tem-se M linhas cada uma
+com uma operação.
+
+
+<h3>Saída</h3>
+
+	Para cada operação <b>lca A B</b>, seu programa lca entre os nós <b>A</b> e <b>B</b>.
+
+  
+<h3>Exemplo de entrada</h3>
+<pre>5 9
+lca 1 1
+link 1 2
+link 3 2
+link 4 3
+lca 1 4
+lca 3 4
+cut 4
+link 5 3
+lca 1 5
+</pre>
+
+<h3>Exemplo de saída</h3>
+<pre>1
+2
+3
+2
+</pre>
+
+<h3>Observações</h3>
+<ul>
+<li>
+Seu trabalho deve ser resolvido usando árvores.
+</li></ul>
+<hr></form></div>
+
+</div></body></html>
