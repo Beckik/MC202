@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>sqtpm</title>
+<link type="image/png" rel="icon" href="http://ion.ic.unicamp.br/sqtpm/icon.png">
+<link rel="stylesheet" type="text/css" href="./sqtpm_files/sqtpm.css" media="all">
+
+<style></style></head>
+<body>
+<div id="wrapper"><div id="sidebar"><h1>sqtpm</h1><p style="margin-top:-15px"><small>[206456]</small></p><a href="javascript:;" onclick="window.history.go(-1); return false;">voltar</a></div><div id="content"><form method="post" action="http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi" enctype="multipart/form-data" name="sqtpm"><script type="text/javascript" src="./sqtpm_files/sqtpm.js"></script><input type="hidden" name="action"><input type="hidden" name="arg1"><input type="hidden" name="arg2"><input type="hidden" name="arg3"><b>Trabalho:</b> 09-dicionario-hashing<table><tbody><tr><td style="vertical-align:top">Linguagens: C<br>Data de abertura: 2017/10/02 14:00:00<br>Data limite para envio: 2017/10/16 12:00:00 (encerrado)<br>Número máximo de envios: 25<br>Casos-de-teste abertos: <a href="javascript:;" onclick="wrap(&#39;dwn&#39;,&#39;09-dicionario-hashing&#39;,&#39;&#39;,&#39;casos-de-teste.tgz&#39;)" ;="">casos-de-teste.tgz</a><br></td></tr></tbody></table><hr><h1>Dicionário</h1>
+
+Um dicionário (ou array associativo ou map) é um tipo abstrato de
+dados para armazenar valores acessíveis por uma chave que permite pelo
+menos as seguintes operações básicas: inserir um valor e a chave,
+recuperar um valor através da chave e remover um valor e a chave.
+O nome dicionário é usado mais freqüentemente quando as chaves
+são cadeias de caracteres. 
+
+<p>
+Este trabalho consiste em implementar um dicionário baseado em uma
+tabela de hashing com sondagem usando hashing duplo para armazenar
+cadeias do alfabeto {a,b,...,z,A,B,...,Z,_}.
+
+</p><p>
+No máximo 5.000 cadeias de no máximo 250 caracteres estarão armazenadas
+na tabela ao mesmo tempo.  Defina o tamanho e a função de hashing para
+a sua tabela.
+
+</p><p>
+Escolha também uma função de transformação de cadeias de caracteres em
+inteiros.  Não importa a forma como você faça para este trabalho, mas
+algumas funções são muito piores que outras em termos de espalhamento.
+Um exemplo que funciona bem na prática é a função de hashing djb2 abaixo.
+
+</p><pre>unsigned long djb2(unsigned char *str) {
+  unsigned long hash = 5381;
+  int c;
+  
+  while ((c = *str++))
+    hash = ((hash &lt;&lt; 5) + hash) + c; // hash * 33 + c
+  
+  return hash;
+}
+</pre>
+
+<h3>Entrada</h3>
+Cada linha da entrada para seu programa é formada por um caractere
+separado de uma chave por um espaço. Os caracteres podem ser i para
+inserir uma chave na tabela, b para uma busca na tabela que deve
+retornar o índice da cadeia, r para remover da tabela e f para
+terminar o programa.  O índice de cada cadeia é atribuído
+seqüencialmente a partir de 0, sem reuso.
+
+<h3>Saída</h3>
+Para cada busca na tabela seu programa deve imprimir "encontrado i" ou
+"nao enconrado" em uma linha. As outras ações não geram saída.
+
+
+<h3>Exemplo</h3>
+
+Entrada:
+<pre>i itdoesntmatter
+i thewaythatyoutakeit
+i itdoesntmatter
+i thewaythatyoumakeit
+b itdoesntmatteR
+b itdoesntmatter
+b thewaythatyoumakeit
+r thewaythatyoumakeit
+b thewaythatyoumakeit
+f
+</pre>
+
+Saída:
+
+<pre>nao encontrado
+encontrado 0
+encontrado 2
+nao encontrado
+</pre>
+
+<h3>Observações</h3>
+
+<ul>
+<li>
+Caso tenha problemas de desempenho (limite de tempo excedido),
+aumentar (um pouco) o tamanho da tabela pode solucionar seu problema.
+</li></ul>
+<hr></form></div>
+
+</div></body></html>
