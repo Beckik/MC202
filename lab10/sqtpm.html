@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>sqtpm</title>
+<link type="image/png" rel="icon" href="http://ion.ic.unicamp.br/sqtpm/icon.png">
+<link rel="stylesheet" type="text/css" href="./sqtpm_files/sqtpm.css" media="all">
+
+<style></style></head>
+<body>
+<div id="wrapper"><div id="sidebar"><h1>sqtpm</h1><p style="margin-top:-15px"><small>[206456]</small></p><a href="javascript:;" onclick="window.history.go(-1); return false;">voltar</a></div><div id="content"><form method="post" action="http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi" enctype="multipart/form-data" name="sqtpm"><script type="text/javascript" src="./sqtpm_files/sqtpm.js"></script><input type="hidden" name="action"><input type="hidden" name="arg1"><input type="hidden" name="arg2"><input type="hidden" name="arg3"><b>Trabalho:</b> 10-ordenacao<table><tbody><tr><td style="vertical-align:top">Linguagens: PDF<br>Data de abertura: 2017/10/16 14:00:00<br>Data limite para envio: 2017/10/23 12:00:00 (encerrado)<br>Número máximo de envios: 25</td></tr></tbody></table><hr><h1>Ordenação</h1>
+
+Implemente algoritmos de ordenação e teste-os com tamanhos variados de
+vetores aleatórios, registrando os tempos de execução.  Depois
+construa um gráfico com o tamanho das entradas nas abscissas e o tempo
+nas ordenadas, traçando uma curva do tempo para cada algoritmo.
+Lembre-se dos laboratórios de física se ficar em dúvida sobre o que
+fazer.
+
+<p>
+Sabemos que todos os algoritmos de ordenação imaginados já estão
+implementados por aí.  Mas observe que cada algoritmo representa uma
+idéia e uma estratégia de solução de problemas em computação.
+Implementar os algoritmos por si mesmo é uma oportunidade de
+compreender as idéias, de apreciá-las e de melhorar a técnica pessoal
+de programação.
+
+</p><p>
+Você pode escolher quantos e quais algoritmos implementará e qual a
+abrangência dos seus testes.  Seria interessante incluir também o
+qsort de stdlib.
+
+</p><p>
+Como sugestão, defina os tamanhos das entradas que vai usar e gere
+alguns vetores de números aleatórios de cada tamanho, depois tire a
+média dos tempos de execução.  Para algoritmos muito lentos, pode ser
+que o tamanho da entrada tenha que ser pequeno.  Isso vai gerar uma
+curva parcial para o algoritmo, mas não é um problema.  
+
+</p><p>
+Tome cuidado com entradas que fazem com que um algoritmo exiba
+comportamento extremo.  Vetores que estão ordenados ou quase
+ordenados são extremos para vários algoritmos de ordenação.
+
+</p><p>
+Uma forma de medir o tempo de cpu de um certo trecho de código é
+envolvendo-o com chamadas a clock_gettime(), subtraindo depois.  As
+definições estão em time.h. Tome cuidado para selecionar o tipo de
+relógio adequado (algum que meça tempo de CPU do seu processo).
+Dependendo do ambiente, a resolução do relógio pode ser muito
+grossa, impedindo a medição adequada para entradas pequenas.  Nesse
+caso pode-se repetir a execução um certo número de vezes, tirando a
+média depois ou pode-se usar entradas maiores.
+
+</p><p>
+Observe que o tempo que será medido não será verdadeiramente médio.
+Para isso teríamos que medir o tempo de todas as entradas possíveis,
+mas não é viável.
+
+</p><p>
+Números aleatórios podem ser gerados usando rand().  O gerador de
+números pode ser inicializado por srand().  Escolhendo a mesma semente
+k com srand() vai fazer com que rand() produza a mesma seqüência de
+números, o que permite que os experimentos sejam reproduzidos.
+
+</p><p>
+Para gerar o gráfico você pode usar gnuplot, R ou mesmo Excel.
+Submeta um arquivo pdf de tamanho máximo 1Mb pelo sqtpm.
+
+</p><hr></form></div>
+
+</div></body></html>
