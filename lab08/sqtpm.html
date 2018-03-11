@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>sqtpm</title>
+<link type="image/png" rel="icon" href="http://ion.ic.unicamp.br/sqtpm/icon.png">
+<link rel="stylesheet" type="text/css" href="./sqtpm_files/sqtpm.css" media="all">
+
+<style></style></head>
+<body>
+<div id="wrapper"><div id="sidebar"><h1>sqtpm</h1><p style="margin-top:-15px"><small>[206456]</small></p><a href="javascript:;" onclick="window.history.go(-1); return false;">voltar</a></div><div id="content"><form method="post" action="http://ion.ic.unicamp.br/sqtpm/sqtpm.cgi" enctype="multipart/form-data" name="sqtpm"><script type="text/javascript" src="./sqtpm_files/sqtpm.js"></script><input type="hidden" name="action"><input type="hidden" name="arg1"><input type="hidden" name="arg2"><input type="hidden" name="arg3"><b>Trabalho:</b> 08-heap-aumentado<table><tbody><tr><td style="vertical-align:top">Linguagens: C<br>Data de abertura: 2017/10/02 14:00:00<br>Data limite para envio: 2017/10/09 12:00:00 (encerrado)<br>Número máximo de envios: 25<br>Casos-de-teste abertos: <a href="javascript:;" onclick="wrap(&#39;dwn&#39;,&#39;08-heap-aumentado&#39;,&#39;&#39;,&#39;casos-de-teste.tgz&#39;)" ;="">casos-de-teste.tgz</a><br></td></tr></tbody></table><hr><h1>Heap aumentado</h1>
+
+Em várias aplicações de um heap de mínimo as operações essenciais são
+inserir uma chave e sua prioridade, remover a chave com prioridade
+mínima e reduzir o valor da prioridade de uma chave.  Um exemplo
+importante é o algoritmo para calcular caminhos de custo mínimo em
+grafos, chamado de Algoritmo de Dijkstra.
+
+<p>
+Como discutimos em sala, reduzir o valor da prioridadede de uma chave
+requer encontrá-la.  Em um heap isso só pode ser feito por uma busca
+seqüencial.  Fazendo a busca seqüencial, reduzir o valor de uma
+prioridade no heap vai consumir um número de operações proporcional a
+n, o número de chaves no heap.
+
+</p><p>
+Mas, ainda como discutimos em sala, podemos aumentar o heap com um
+vetor, com uma tabela de hashing, com uma árvore de busca etc., de
+forma que a operação que diminui o valor de uma prioridade seja mais
+eficiente.
+
+</p><p> Seja H um heap de mínimo implementado de forma seqüencial.  Vamos
+chamar de rank(k) a posição da chave k no vetor que guarda os nós de
+H.  Suponha que H será aumentado por um vetor V.  V é tal que V[i] =
+rank[i] para toda chave i em H.  Todas as operações no heap devem
+atualizar V adequadamente.  Sempre que o valor da prioridade de uma
+chave k precisar ser reduzido, V[k] deve ser consultado para recuperar
+rank(k) e acessar o nó que contém k e a prioridade de k no heap.
+
+</p><p>
+Dessa forma, diminuir o valor de uma chave no heap vai consumir um
+número de operações proporcional a log2(n) no pior caso.
+
+</p><p>
+Escreva um programa em C que constrói um heap de mínimo aumentado com
+capacidade para n pares {chaves,custo}, inicialmente vazio. As chaves
+são números no intervalo [0,n) e os custos são inteiros.  O heap é
+minimo no custo.
+
+</p><p>
+A primeira linha da entrada contém o número n.  
+Depois de criar o heap o programa deve processar comandos para
+atualizar o heap aumentado. Os comandos são:
+
+</p><ul>
+<li>
+i k c
+<p>
+Inserir o par {k,c} no heap aumentado.  Se k já existir, essa operação
+não deve fazer nada.
+
+</p></li><li>
+m
+<p>
+Remover a chave com custo mínimo do heap e imprimir em uma linha.  Se
+o heap já estiver vazio então o programa deve imprimir 'vazio'.  Veja
+o exemplo abaixo.
+
+</p></li><li>
+d k c'
+<p>
+Diminuir o valor do custo da chave k para c'.
+
+</p></li><li>
+t
+<p>
+Terminar o programa.
+
+
+
+</p><h2>Exemplo</h2>
+
+<h3>Entrada</h3>
+<pre>25
+i 10 15
+i 12 6
+i 13 9
+i 14 18
+i 15 23
+i 0 50
+i 15 30
+d 14 -7
+d 10 8
+m
+m
+m
+m
+m
+m
+m
+t
+</pre>
+
+
+<h3>Saída</h3>
+<pre>minimo {14,-7}
+minimo {12,6}
+minimo {10,8}
+minimo {13,9}
+minimo {15,23}
+minimo {0,50}
+vazio
+</pre>
+
+<h3>Sugestão</h3>
+<ul>
+<li>
+Comece implementando um heap.  Depois que ele funcionar, aumente com o vetor.
+</li></ul>
+
+<hr></li></ul></form></div>
+
+</div></body></html>
